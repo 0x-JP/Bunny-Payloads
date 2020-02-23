@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Title:         Wallpaper Changer with Fire Niks in full screen
+# Author:        AgentP
+# Version:       1.0
+#
+#  This runs any valid ducky code from the ducky_code.txt file then completes.
+# BeerFine emailer
+#
+# G 1000 Payload Running
+# G B 0 Payload Completed
+
+LED SETUP
+
+# Set attack modes
+ATTACKMODE HID STORAGE
+
+SET_LANGUAGE no
+
+GET SWITCH_POSITION
+
+LED ATTACK
+ if [ -f "/root/udisk/payloads/${SWITCH_POSITION}/ducky_script.txt" ]; then
+        QUACK ${SWITCH_POSITION}/ducky_script.txt
+        LED FINISH
+else
+    LED FAIL
+    echo "Unable to load ducky_script.txt" >> /root/debuglog.txt
+        exit 1
+fi
+  

