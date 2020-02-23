@@ -9,7 +9,7 @@ DELAY 1000
 STRING $MAIL = $Outlook.CreateItem(0)
 ENTER
 DELAY 1000
-STRING $Mail.To = "<yourEmail@here.com"
+STRING $Mail.To = "<yourEmail@here.com>"
 ENTER
 DELAY 1000
 STRING $Mail.Subject = "<Your subject>"
