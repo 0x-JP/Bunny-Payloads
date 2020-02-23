@@ -1,9 +1,9 @@
 # Bunny-Payloads
-#Work In Progress
+# Work In Progress
 
-##Payload Structure
+## Payload Structure
 
-###HID attacks (Human Interface Device)
+### HID attacks (Human Interface Device)
 There are two files, payload.txt sets the options such as language, storage, LED lights etc.  
 ducky_script.txt controls what keystrokes should be executed during the attack
 
